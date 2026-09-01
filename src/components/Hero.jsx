@@ -70,7 +70,7 @@ const Hero = () => {
 
           <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
             <a
-              href="/Iqra-Jamil-CV.pdf"
+              href="/cv resume.pdf"
               download
               className="group inline-flex items-center text-ink! gap-2 rounded-full bg-text px-6 py-3 text-sm font-semibold text-black transition-transform hover:-translate-y-0.5"
             >
