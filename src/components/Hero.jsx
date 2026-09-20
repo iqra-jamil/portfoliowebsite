@@ -51,7 +51,7 @@ const Hero = () => {
 
           >
 
-            WordPress Developer  /  Frontend Developer
+            WordPress Developer  /  Frontend Developer / Python Learner
           </motion.p>
 
 
@@ -64,13 +64,14 @@ const Hero = () => {
             I build responsive, user-friendly websites with WordPress and React. I focus
             on clean layouts, practical functionality, and interfaces that work well
             across different devices. I enjoy turning ideas and client requirements
-            into polished web experiences.
+            into polished web experiences. Alongside web development, I am currently
+            learning Python and exploring AI development.
           </motion.p>
 
 
           <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
             <a
-              href="/cv resume.pdf"
+              href="/Iqra_Jamil_CV.pdf"
               download
               className="group inline-flex items-center text-ink! gap-2 rounded-full bg-text px-6 py-3 text-sm font-semibold text-black transition-transform hover:-translate-y-0.5"
             >

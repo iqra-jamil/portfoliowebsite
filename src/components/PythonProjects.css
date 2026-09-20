@@ -1,0 +1,181 @@
+/* ─── Python Projects page ─────────────────────────────────────────────────── */
+
+.py-page {
+  min-height: 100vh;
+  background: #0d0b14;
+  color: #e8e5f0;
+  font-family: "Inter", sans-serif;
+  padding: 2rem 1.5rem 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Back link */
+.py-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #9d8fc5;
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  margin-bottom: 3rem;
+  transition: color 0.2s;
+}
+.py-back:hover {
+  color: #c4b5f4;
+}
+
+/* Header */
+.py-header {
+  margin-bottom: 3.5rem;
+}
+
+.py-label {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #7c5cbf;
+  background: rgba(124, 92, 191, 0.12);
+  border: 1px solid rgba(124, 92, 191, 0.3);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.py-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f0eeff;
+  margin: 0 0 1rem;
+}
+
+.py-accent {
+  color: #a78bfa;
+}
+
+.py-sub {
+  max-width: 52ch;
+  color: #8b87a8;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Empty state */
+.py-empty {
+  border: 1px dashed rgba(124, 92, 191, 0.3);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  color: #6b6585;
+  font-size: 0.95rem;
+}
+
+/* Project grid */
+.py-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.py-card {
+  background: #13101f;
+  border: 1px solid rgba(124, 92, 191, 0.18);
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.py-card:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  transform: translateY(-3px);
+}
+
+/* Tags */
+.py-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.py-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Title */
+.py-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f0eeff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Description */
+.py-desc {
+  font-size: 0.9rem;
+  color: #7a7595;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+/* Buttons */
+.py-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.py-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.py-btn--ghost {
+  color: #c4b5f4;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  background: transparent;
+}
+.py-btn--ghost:hover {
+  background: rgba(167, 139, 250, 0.08);
+  border-color: rgba(167, 139, 250, 0.6);
+}
+.py-btn--solid {
+  color: #0d0b14;
+  background: #a78bfa;
+  border: 1px solid transparent;
+}
+.py-btn--solid:hover {
+  background: #c4b5f4;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .py-page {
+    padding: 1.5rem 1rem 4rem;
+  }
+}

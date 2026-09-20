@@ -46,17 +46,22 @@ const About = () => {
               design, layout, and functionality come together to create useful digital
               experiences.
             </p>
+
             <p>
               I have worked on WordPress client projects and built frontend projects
               using HTML, CSS, JavaScript, and React. I enjoy turning ideas and
               requirements into clean, responsive, and user-friendly websites.
             </p>
+
             <p>
               My experience includes customizing WordPress websites, working with themes
-              and plugins, and developing frontend interfaces. I'm currently building my
-              portfolio around WordPress and frontend development and continuing to
-              improve my skills through practical projects.
+              and plugins, and developing frontend interfaces. Alongside web development,
+              I'm currently learning Python and exploring AI development through practical
+              projects. I'm continuing to build my skills through hands-on learning and
+              personal projects.
             </p>
+
+
 
           </motion.div>
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,8 +10,9 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
+import PythonProjects from "./components/PythonProjects";
 
-function App() {
+function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,6 +35,17 @@ function App() {
       <Footer />
       <ScrollToTop />
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/python-projects" element={<PythonProjects />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
