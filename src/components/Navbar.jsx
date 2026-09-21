@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -13,6 +14,9 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -30,6 +34,10 @@ const Navbar = () => {
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     setOpen(false);
+    if (!isHome) {
+      navigate(`/${href}`);
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -46,8 +54,8 @@ const Navbar = () => {
     >
       <nav className="container-px mx-auto flex h-16 max-w-6xl items-center justify-between md:h-20">
         <a
-          href="#home"
-          onClick={(e) => handleLinkClick(e, "#home")}
+          href={isHome ? "#home" : "/"}
+          onClick={isHome ? (e) => handleLinkClick(e, "#home") : undefined}
           className="font-display text-lg font-semibold tracking-tight text-text md:text-xl"
         >
           Iqra Jamil<span className="text-amber">.</span>
@@ -57,7 +65,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
-                href={link.href}
+                href={isHome ? link.href : `/${link.href}`}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className="text-sm text-text-muted transition-colors hover:text-text"
               >
@@ -97,7 +105,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                  href={isHome ? link.href : `/${link.href}`}
                     onClick={(e) => handleLinkClick(e, link.href)}
                     className="block rounded-lg px-2 py-3 text-base text-text-muted transition-colors hover:bg-surface hover:text-text"
                   >

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,15 +10,23 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
-import PythonProjects from "./components/PythonProjects";
+import ProjectsPage from "./components/ProjectsPage";
 
 function Home() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1100);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (!location.hash) return;
+    requestAnimationFrame(() => {
+      document.querySelector(location.hash)?.scrollIntoView({ behavior: "smooth" });
+    });
+  }, [location.hash]);
 
   return (
     <>
@@ -43,7 +51,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/python-projects" element={<PythonProjects />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/python-projects" element={<Navigate to="/projects" replace />} />
       </Routes>
     </BrowserRouter>
   );

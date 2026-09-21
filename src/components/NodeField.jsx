@@ -1,9 +1,7 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 
-// A quiet, ambient node-link network — a nod to the "AI enthusiast" thread
-// running through the portfolio. Positions are generated once and animated
-// with slow, staggered pulses so it reads as atmosphere, not decoration.
+
 const NodeField = () => {
   const nodes = useMemo(() => {
     const seeded = [
